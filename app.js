@@ -30,9 +30,9 @@ app.get("/",function(req,res){
 app.get("/alltags", (req, res) => {
  
   const fs = require('fs');
-  let usertags = JSON.parse(fs.readFileSync('./models/initUserTag.json', 'utf8'));
   const UserTag = require('./models/tagModel')
-  UserTag.updateMany(usertags);
+  let usertags = JSON.parse(fs.readFileSync('./models/initUserTag.json', 'utf8'));
+  UserTag.insertMany(usertags);
 
   UserTag.find({},function(err,allUserTags){
       if(err)
