@@ -6,6 +6,7 @@ var bodyParser = require("body-parser");
 app.set("view engine","ejs");
 
 
+
 app.use(bodyParser.urlencoded({extended:true}));
 // mongoose.connect("mongodb://localhost/jourme");
 mongoose.connect('mongodb://localhost/jourme', { useNewUrlParser: true , useUnifiedTopology: true});
@@ -18,6 +19,21 @@ mongoose.connect('mongodb://localhost/jourme', { useNewUrlParser: true , useUnif
 
 app.get("/",function(req,res){
   res.render("welcome");
+});
+
+app.get("/alltags", (req, res) => {
+ 
+  const fs = require('fs');
+  let usertags = JSON.parse(fs.readFileSync('./models/initUserTag.json', 'utf8'));
+  const UserTag = require('./models/tagModel')
+  UserTag.updateMany(usertags);
+
+  UserTag.find({},function(err,allUserTags){
+      if(err)
+          console.log("error find");
+      else
+          res.send(allUserTags);
+  });
 });
 app.listen(3000,function(){
   console.log('Server has started!');

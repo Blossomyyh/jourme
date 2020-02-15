@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-export const UserSchema = new Schema({
-  user_id:Schema.Types.ObjectId,
+const UserSchema = new Schema({
+  ID:Schema.Types.ObjectId,
   firstName: {
     type: String,
     required: 'Enter a first name'
@@ -11,13 +11,21 @@ export const UserSchema = new Schema({
     type: String,
     required: 'Enter a last name'
   },
-  email: { type: String },
-  phone: { type: Number },
-  // location: { type: } 
+  email: String,
+  phone: Number,
+  location: String,
+  UserTagList: {type = [String]}, 
+  InputTagList: {type = [String]}, 
+  TravelRecordList: {type = [String]}, 
 });
 
-export const TravelRouteSchema = new Schema({
-  route_id:Schema.Types.ObjectId,
+const TravelRouteSchema = new Schema({
+  UserID: {type=String, ref = 'User'},
+  RouteID:Schema.Types.ObjectId,
   AttractionList: {type: String,},
   Restaurant: {type: String},
 });
+
+
+module.exports = mongoose.model('User', User );
+module.exports = mongoose.model('TravelRoute', TravelRouteSchema );
