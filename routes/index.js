@@ -30,8 +30,5 @@ router.get('/start', (req, res) => {
       todoList: todoList
     } );
   });
-
-
-
-
+  
 module.exports = router;

@@ -35,13 +35,13 @@ app.get('/alltags', (req, res) => {
   const fs = require('fs');
   let usertags = JSON.parse(fs.readFileSync('./models/initUserTag.json', 'utf8'));
   const UserTag = require('./models/tagModel');
-  UserTag.insertMany(usertags);
+  usertags.forEach(function(usertags) {
+    UserTag.findOneAndUpdate( usertags, usertags, { upsert: true });
+  });
 
   UserTag.find({},function(err,allUserTags){
-      if(err)
-          console.log("error find");
-      else
-          res.send(allUserTags);
+      if(err)  console.log("error find");
+      else res.send(allUserTags);
   });
 });
 
