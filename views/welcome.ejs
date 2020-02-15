@@ -1,7 +1,31 @@
 <%- include('partials/header'); -%>
 
-<h1>Welcome Page</h1>
+<div class="container">
+    <div class="col-lg-12">
+        <p>
+            <%= day %> : Today's to-do list
+        </p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-<p> Welcome to JourMe</p>
+        <ul>
+            <% for (var i=0; i< todoList.length; i++) { %>
+           <li> <%= todoList[i] %> </li>
+           <% } %>
+         </ul>
+    </div>
+    <div class="col-lg-12">
+        <div class="jumbotron" >
+            <h1 class="display-3">Hello, world!</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <p class="lead">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
 
 <%- include('partials/footer'); -%>
