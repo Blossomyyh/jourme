@@ -1,0 +1,43 @@
+<%- include('partials/header'); -%>
+
+<div class="container">
+    <div class="col-lg-12">
+
+        <div class="jumbotron" >
+            <h1 class="display-3">So, first</h1>
+            <h1 class="display-3">Who are you?</h1>
+
+            <p class="lead">Tell me something about yourself</p>
+            <hr class="my-4">
+            <h1>Log</h1>
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn btn-success">Success</button>
+            <button type="button" class="btn btn-info">Info</button>
+            <button type="button" class="btn btn-warning">Warning</button>
+            <button type="button" class="btn btn-danger">Danger</button>
+            <button type="button" class="btn btn-link">Link</button>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <p>
+            <%= day %> : Today's to-do list
+        </p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <ul>
+            <% for (var i=0; i< todoList.length; i++) { %>
+           <li> <%= todoList[i] %> </li>
+           <% } %>
+         </ul>
+
+         
+    </div>
+
+
+
+</div>
+
+
+
+<%- include('partials/footer'); -%>
