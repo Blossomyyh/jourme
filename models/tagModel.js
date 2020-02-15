@@ -1,12 +1,16 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-export const UserTagSchema = new Schema({
+const UserTagSchema = new Schema({
   userTagName: String,
   description: String,
+  type: String,
 });
 
-export const InputTagSchema = new Schema({
+const InputTagSchema = new Schema({
   userTagName: String,
   description: String,
+  type: String,
 });
+module.exports = mongoose.model('UserTag',InputTagSchema);
+module.exports = mongoose.model('InputTag',InputTagSchema);
