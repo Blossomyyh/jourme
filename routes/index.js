@@ -15,20 +15,20 @@ router.get("/",function(req,res){
 //   res.render('welcome');
 // });
 
-router.get('/person', (req, res) => {
+router.get('/user', (req, res) => {
   console.log('Request for about page recieved');
-  res.render('person',  {
+  res.render('user',  {
     day: today,
     todoList: todoList
   } );
 });
 
-router.get('/start', (req, res) => {
+router.get('/register', (req, res) => {
     console.log('Request for about page recieved');
-    res.render('start',  {
+    res.render('register',  {
       day: today,
       todoList: todoList
     } );
-  });
-  
+});
+
 module.exports = router;
