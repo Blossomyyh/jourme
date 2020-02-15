@@ -12,5 +12,5 @@ const InputTagSchema = new Schema({
   description: String,
   type: String,
 });
-module.exports = mongoose.model('UserTag',InputTagSchema);
+module.exports = mongoose.model('UserTag',UserTagSchema);
 module.exports = mongoose.model('InputTag',InputTagSchema);
