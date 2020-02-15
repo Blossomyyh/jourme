@@ -29,6 +29,22 @@ app.use(express.static(path.join(__dirname, 'node_modules')));
 app.set("view engine","ejs");
 
 app.use('/', routes);
+
+app.get('/alltags', (req, res) => {
+ 
+  const fs = require('fs');
+  let usertags = JSON.parse(fs.readFileSync('./models/initUserTag.json', 'utf8'));
+  const UserTag = require('./models/tagModel');
+  UserTag.insertMany(usertags);
+
+  UserTag.find({},function(err,allUserTags){
+      if(err)
+          console.log("error find");
+      else
+          res.send(allUserTags);
+  });
+});
+
 app.listen(3000,function(){
   console.log('Server has started!');
 });

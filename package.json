@@ -23,7 +23,10 @@
     "ejs": "^3.0.1",
     "ejs-lint": "^1.0.1",
     "express": "^4.17.1",
+    "mongo": "^0.1.0",
     "mongoose": "^5.9.1",
     "request": "^2.88.2"
-  }
+  },
+  "devDependencies": {},
+  "keywords": []
 }
