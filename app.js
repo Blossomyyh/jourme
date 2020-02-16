@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+<<<<<<< HEAD
 const path = require('path');
 const routes = require('./routes');
 
@@ -9,10 +10,8 @@ var bodyParser = require("body-parser");
 const ejs = require("ejs");
 
 
-var argv = require('optimist').argv;
 app.use(bodyParser.urlencoded({extended:true}));
-mongoose.connect('mongodb://'+argv.be_ip +':80/my_database', { useNewUrlParser: true , useUnifiedTopology: true});
-
+mongoose.connect('mongodb://localhost/jourme', { useNewUrlParser: true , useUnifiedTopology: true});
 
 // Set the default views directory to html folder
 app.set('views', path.join(__dirname, 'views'));
@@ -41,13 +40,31 @@ app.get('/showalltags', (req, res) => {
   });
 });
 
-<<<<<<< HEAD
 
 app.listen(3000,function(){
   console.log('Server has started!');
 });
-=======
-app.listen(80,argv.fe_ip);
-console.log("App listening on port 80");
->>>>>>> a4303c399c05b237fa197678101b4fed9801c4dc
 
+=======
+var request = require("request")
+var mongoose = require("mongoose");
+var bodyParser = require("body-parser");
+app.set("view engine","ejs");
+
+
+app.use(bodyParser.urlencoded({extended:true}));
+// mongoose.connect("mongodb://localhost/jourme");
+mongoose.connect('mongodb://localhost/jourme', { useNewUrlParser: true , useUnifiedTopology: true});
+//connect to mongodb
+
+// app.get("/",function (req,res) {
+//   res.render("welcome");
+// });
+
+app.get("/",function(req,res){
+  res.render("welcome");
+});
+app.listen(3000,function(){
+  console.log('Server has started!');
+});
+>>>>>>> 9b3ad9c19cbd01cc436d8a907339895de97c9e51

@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Blossomyyh/jourme#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+<<<<<<< HEAD
     "bootstrap": "^4.4.1",
     "bootswatch": "^4.4.1",
     "ejs": "^3.0.1",
@@ -29,4 +30,12 @@
   },
   "devDependencies": {},
   "keywords": []
+=======
+    "ejs": "^3.0.1",
+    "ejs-lint": "^1.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.1",
+    "request": "^2.88.2"
+  }
+>>>>>>> 9b3ad9c19cbd01cc436d8a907339895de97c9e51
 }
