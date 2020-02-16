@@ -28,4 +28,8 @@ const TravelRouteSchema = new Schema({
 
 
 module.exports = mongoose.model('User', User );
+<<<<<<< HEAD
 module.exports = mongoose.model('TravelRoute', TravelRouteSchema );
+=======
+module.exports = mongoose.model('TravelRoute', TravelRouteSchema );
+>>>>>>> e53751df72fbea0b11935baf827a67b6a2e4792c

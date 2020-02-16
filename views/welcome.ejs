@@ -2,59 +2,57 @@
 
 <div class="container">
     <div class="col-lg-12">
-        <p> <%= day %> : Today's to-do list </p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-        <ul>
+        <p> <%= day %> </p>
+        <!-- <ul>
             <% for (var i=0; i< todoList.length; i++) { %>
            <li> <%= todoList[i] %> </li>
            <% } %>
-         </ul>
+         </ul> -->
     </div>
     <div class="col-lg-12">
         <div class="jumbotron" >
             <h1 class="display-3">Hello, BackPacker!</h1>
             <p class="lead">Welcome, looking forward to customizing your journey?</p>
-            <p>Please log in to start your first journey!</p>
+            <p>Please log in to start your journey!</p>
 
 
             <hr class="my-4">
             <h1>Log</h1>
-            
+
             <div class="row">
                 <div class="col-lg-6">
-
-                    <form>
+                    <form action='/startEnd' method="GET">
                         <fieldset>
                             <div class="form-group">
-                              <label for="inputEmail">Email address</label>
-                              <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <label for="inputEmail">Email address</label>
+                                <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword">Password</label>
                                 <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                              </div>
+                            </div>
                         </fieldset>
                     </form>
                 </div>
-                <div class="col-lg-4 offset-lg-1" >
+                <div class="col-lg-4 offset-lg-2" >
                     <p class="lead">
-                        <a class="btn btn-primary btn-lg" href="#" role="button">&nbsp;&nbsp; Log In&nbsp;&nbsp;</a>
+                        <a class="btn btn-primary btn-lg" href="/startEnd" role="button">&nbsp;&nbsp; Log In&nbsp;&nbsp;</a>
                     </p>
 
-                        <fieldset>
-                            <div class="form-group row">
-                                <div class="col-sm-10" style="padding: 1.6em 0 0 0;">
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;No account yet?</p> 
-                                </div>
-                              </div>
-                        </fieldset>
+                    <fieldset>
+                        <div class="form-group row">
+                            <div class="col-sm-10" style="padding: 1.6em 0 0 0;">
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;No account yet?</p>
+                            </div>
+                        </div>
+                    </fieldset>
 
                     <p class="lead">
-                        <a class="btn btn-primary btn-lg" href="register" role="button">&nbsp;&nbsp; Register&nbsp;&nbsp;</a>
+                        <a class="btn btn-primary btn-lg" href="/register" role="button">&nbsp;&nbsp; Register&nbsp;&nbsp;</a>
                     </p>
-                    
+
                 </div>
             </div>
 

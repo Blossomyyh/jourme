@@ -1,43 +1,49 @@
 <%- include('partials/header'); -%>
-
 <div class="container">
     <div class="col-lg-12">
-
-        <div class="jumbotron" >
-            <h1 class="display-3">So, first</h1>
-            <h1 class="display-3">Who are you?</h1>
-
-            <p class="lead">Tell me something about yourself</p>
-            <hr class="my-4">
-            <h1>Log</h1>
-            <button type="button" class="btn btn-primary">Primary</button>
-            <button type="button" class="btn btn-secondary">Secondary</button>
-            <button type="button" class="btn btn-success">Success</button>
-            <button type="button" class="btn btn-info">Info</button>
-            <button type="button" class="btn btn-warning">Warning</button>
-            <button type="button" class="btn btn-danger">Danger</button>
-            <button type="button" class="btn btn-link">Link</button>
-        </div>
-    </div>
-    <div class="col-lg-12">
-        <p>
-            <%= day %> : Today's to-do list
-        </p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-        <ul>
-            <% for (var i=0; i< todoList.length; i++) { %>
-           <li> <%= todoList[i] %> </li>
-           <% } %>
-         </ul>
-
-         
+        <p> <%= day %> </p>
     </div>
 
+    <div class="row">
+        <div class="col-lg-4 centered">
+            <form action="/character", method="POST">
+                <fieldset>
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" name="firstName"  placeholder="Billie">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" name="lastName"  placeholder="Eilish">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                </fieldset>
+        </div>
+        <div class="col-lg-4 offset-lg-6 centered">
+            <fieldset>
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="number" class="form-control" name="phoneNumber"  placeholder="123-456-8790">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" name="address" placeholder="475 Via Ortega, Stanford, CA 94305">
+                </div>
+            </fieldset>
+            <button type="submit" class="btn btn-primary" href="/character" style="user-select: auto;">Next Step</button>
+            </form>
+        </div>
 
-
+    </div>
 </div>
-
-
 
 <%- include('partials/footer'); -%>
