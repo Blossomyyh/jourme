@@ -12,14 +12,6 @@ const ejs = require("ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 mongoose.connect('mongodb://localhost/jourme', { useNewUrlParser: true , useUnifiedTopology: true});
 
-//connect to mongodb
-
-// app.get("/",function (req,res) {
-//   res.render("welcome");
-// });
-
-
-
 // Set the default views directory to html folder
 app.set('views', path.join(__dirname, 'views'));
 // Set the folder for css & java scriptss
@@ -30,24 +22,24 @@ app.set("view engine","ejs");
 
 app.use('/', routes);
 
-app.get('/alltags', (req, res) => {
- 
+app.get('/writealltags', (req, res) => {
   const fs = require('fs');
   let usertags = JSON.parse(fs.readFileSync('./models/initUserTag.json', 'utf8'));
   const UserTag = require('./models/tagModel');
-  usertags.forEach(function(usertags) {
-    UserTag.findOneAndUpdate( usertags, usertags, { upsert: true });
+  UserTag.insertMany(usertags,function(err,res){
+    if(err)  console.log(err);
   });
+});
 
+app.get('/showalltags', (req, res) => {  
+  const UserTag = require('./models/tagModel');
   UserTag.find({},function(err,allUserTags){
-      if(err)  console.log("error find");
-      else res.send(allUserTags);
+  if(err)  console.log("error find");
+  else res.send(allUserTags);
   });
 });
 
 app.listen(3000,function(){
   console.log('Server has started!');
 });
-
-
 
