@@ -9,8 +9,10 @@ var bodyParser = require("body-parser");
 const ejs = require("ejs");
 
 
+var argv = require('optimist').argv;
 app.use(bodyParser.urlencoded({extended:true}));
-mongoose.connect('mongodb://localhost/jourme', { useNewUrlParser: true , useUnifiedTopology: true});
+mongoose.connect('mongodb://'+argv.be_ip +':80/my_database', { useNewUrlParser: true , useUnifiedTopology: true});
+
 
 // Set the default views directory to html folder
 app.set('views', path.join(__dirname, 'views'));
@@ -39,7 +41,6 @@ app.get('/showalltags', (req, res) => {
   });
 });
 
-app.listen(3000,function(){
-  console.log('Server has started!');
-});
+app.listen(80,argv.fe_ip);
+console.log("App listening on port 80");
 
