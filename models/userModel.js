@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
+export const UserSchema = new Schema({
   ID:Schema.Types.ObjectId,
   firstName: {
     type: String,
@@ -19,7 +19,7 @@ const UserSchema = new Schema({
   TravelRecordList: {type = [String]}, 
 });
 
-const TravelRouteSchema = new Schema({
+export const TravelRouteSchema = new Schema({
   UserID: {type=String, ref = 'User'},
   RouteID:Schema.Types.ObjectId,
   AttractionList: {type: String,},
@@ -27,5 +27,5 @@ const TravelRouteSchema = new Schema({
 });
 
 
-module.exports = mongoose.model('User', User );
-module.exports = mongoose.model('TravelRoute', TravelRouteSchema );
+//module.exports = mongoose.model('User', User );
+//module.exports = mongoose.model('TravelRoute', TravelRouteSchema );

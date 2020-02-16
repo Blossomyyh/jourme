@@ -1,14 +1,28 @@
-const express = require('express');
-const router = express.Router();
+import {addNewUser} from '../controllers/loginController'
+
 let today = new Date();
 let todoList = ["Sleep","Eat","?"];
+const router = (app)=>{
 
-router.get("/",function(req,res){
-  res.render("welcome",  {
-    day: today,
-    todoList: todoList
-  } );
-});
+  app.router("/")
+      .get((req,res,next)=>{
+          res.render("welcome",  {
+            day: today,
+            todoList: todoList
+          });
+        // middleware
+        console.log(`Request from: ${req.originalUrl}`);
+        console.log(`Request type: ${req.method}`);
+        next();
+      }, addNewUser)
+      // Post endpoint
+      .post(addNewUser)
+  
+  // });
+};
+
+
+
 
 // IIFE (Immediately Invoked Function Expression) ---runs as soon as it is defined. (function () {statements })();
 // router.get('/', (req, res) => {
@@ -16,20 +30,23 @@ router.get("/",function(req,res){
 //   res.render('welcome');
 // });
 
-router.get('/user', (req, res) => {
-  console.log('Request for about page recieved');
-  res.render('user',  {
-    day: today,
-    todoList: todoList
-  } );
-});
+// router.get('/user', (req, res) => {
+//   console.log('Request for about page recieved');
+//   res.render('user',  {
+//     day: today,
+//     todoList: todoList
+//   } );
+// });
 
-router.get('/register', (req, res) => {
-    console.log('Request for about page recieved');
-    res.render('register',  {
-      day: today,
-      todoList: todoList
-    } );
-});
+// router.get('/register', (req, res) => {
+//     console.log('Request for about page recieved');
+//     res.render('register',  {
+//       day: today,
+//       todoList: todoList
+//     } );
+// });
 
-module.exports = router;
+
+
+
+export default router;
