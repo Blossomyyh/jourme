@@ -4,6 +4,7 @@ var mongoose = require("mongoose");
 let today = new Date();
 let todoList = ["Sleep","Eat","?"];
 
+
 router.get("/",function(req,res){
     res.render("welcome",  {
         day: today,
@@ -38,7 +39,7 @@ router.post('/character',(req,res) => {
 
 //not get
 router.get('/attraction',(req,res) => {
-    console.log(req.body);
+    console.log(req.body); //successful
     res.render('attractionPrefer',{
         day:today,
     });
@@ -46,7 +47,7 @@ router.get('/attraction',(req,res) => {
 
 //not get
 router.get('/restaurant',(req,res) => {
-    console.log(req.body);
+    console.log(req.body); //successful
     res.render('restaurantPrefer',{
         day:today,
     });
@@ -54,7 +55,7 @@ router.get('/restaurant',(req,res) => {
 
 //not get
 router.get('/startEnd',(req,res) => {
-    console.log(req.body);
+    console.log(req.body); //successful
     res.render('startEnd',{
         day:today,
     });
@@ -64,7 +65,7 @@ router.get('/startEnd',(req,res) => {
 router.get('/displayRoute',(req,res) => {
     console.log(req.body);
     res.render('displayRoute',{
-        day:today,
+        day:today
     });
 });
 module.exports = router;

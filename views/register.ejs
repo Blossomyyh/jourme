@@ -5,8 +5,8 @@
         <p> <%= day %> </p>
     </div>
 
-    <div class="row">
-        <div class="col-lg-4 centered">
+    <div class="row col justify-content-center">
+        <div class="col-lg-6 centered">
             <form action="/character", method="POST">
                 <fieldset>
                     <div class="form-group">
@@ -24,7 +24,7 @@
                     </div>
                 </fieldset>
         </div>
-        <div class="col-lg-4 centered">
+        <div class="col-lg-6 centered">
             <fieldset>
                 <div class="form-group">
                     <label for="inputPassword">Password</label>
@@ -39,9 +39,9 @@
                     <input type="text" class="form-control" name="address" placeholder="475 Via Ortega, Stanford, CA 94305">
                 </div>
             </fieldset>
-            <button type="submit" class="btn btn-primary" href="/character" style="user-select: auto;">Next Step</button>
-
          </div>
+        <button type="submit" class="btn btn-primary justify-content-center text-capitalize" href="/character" style="user-select: auto;">Next Step</button>
+
         </form>
     </div>
 </div>
