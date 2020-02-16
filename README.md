@@ -81,9 +81,9 @@ GCP
 
 * TreeHacks 2020
 
-* [JOURME]: https://devpost.com/software/jourme
+* [JOURME]: https://devpost.com/software/jourme	"JOURME"
 
-* [http://35.222.19.107/]: http://35.222.19.107/
+* [http://35.223.124.50/]: http://35.223.124.50/	"GCP"
 
   ​
 
