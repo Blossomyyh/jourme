@@ -79,8 +79,13 @@ GCP
 
 ![Restaurant](./src/Restaurant.png)
 
-* in branch Vivian
-* in branch Blossom
+* TreeHacks 2020
+
+* [JOURME]: https://devpost.com/software/jourme
+
+* [http://35.222.19.107/]: http://35.222.19.107/
+
+  ​
 
 
 
