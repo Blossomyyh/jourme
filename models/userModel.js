@@ -12,7 +12,6 @@ const UserSchema = new Schema({
     required: 'Enter a last name'
   },
   email: String,
-  password:String,
   phone: Number,
   location: String,
   UserTagList: {type = [String]}, 

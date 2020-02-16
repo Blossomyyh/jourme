@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-var mongoose = require("mongoose");
 let today = new Date();
 let todoList = ["Sleep","Eat","?"];
 
@@ -19,27 +18,18 @@ router.get("/",function(req,res){
 
 router.get('/user', (req, res) => {
   console.log('Request for about page recieved');
-  var email = req.body.email;
-  
   res.render('user',  {
     day: today,
     todoList: todoList
   } );
 });
 
-router.get('/register', (req, res) => {  
-  res.render('newUser',{
-    day: today,
-  });
+router.get('/register', (req, res) => {
+    console.log('Request for about page recieved');
+    res.render('register',  {
+      day: today,
+      todoList: todoList
+    } );
 });
-
-router.post('/character',(req,res) => {
-  console.log(req.body); //successful
-  res.render('characteristic',{
-    day: today,
-    newUser: req.body,
-  });
-});
-
 
 module.exports = router;
