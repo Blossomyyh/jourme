@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
   {
     "userTagName": "Veggie",
@@ -10,3 +11,17 @@
   }
   
 ]
+=======
+[{
+  "userTagName": "Veggie",
+  "description": "No Meat Plz!",
+  "type": "R"
+}, {
+  "userTagName": "Carnivore",
+  "description": "",
+  "type": "R"
+}]
+
+
+
+>>>>>>> e53751df72fbea0b11935baf827a67b6a2e4792c

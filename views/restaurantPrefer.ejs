@@ -1,0 +1,28 @@
+<%- include('partials/header'); -%>
+
+<div class="container">
+    <div class="col-lg-12">
+        <p> <%= day %> </p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="col-lg-12">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div class="jumbotron" >
+            <h1 class="display-3">Eat Something?</h1>
+            <h1 class="display-3">What do you want..</h1>
+
+            <p class="lead">  </p>
+            <hr class="my-4">
+            <h1>Log</h1>
+            <form method="put" action='/startEnd'>
+                <input type="button" class="btn btn-primary">QUIET</input>
+                <input type="button" class="btn btn-secondary">ACTIVE</input>
+
+                <button type="submit" onclick='/displayRoute'  method='PUT' class="btn btn-primary offset-11">Next Step</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+<%- include('partials/footer'); -%>

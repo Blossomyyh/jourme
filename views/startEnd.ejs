@@ -1,0 +1,17 @@
+<%- include('partials/header'); -%>
+
+<div class="container">
+    <div class="col-lg-12">
+        <p> <%= day %> </p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+    <form action='./displayRoute' method="put">
+         <div class="jumbotron" >
+            <h1 class="display-3">Start the trip at</h1>
+            <h1 class="display-3 offset-9">End at </h1>
+         </div>
+         <button type="submit" href="/displayRoute" class="btn btn-primary offset-10">Generate Route</button>
+    </form>
+</div>
+
+<%- include('partials/footer'); -%>

@@ -12,6 +12,7 @@ const ejs = require("ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 mongoose.connect('mongodb://localhost/jourme', { useNewUrlParser: true , useUnifiedTopology: true});
 
+
 // Set the default views directory to html folder
 app.set('views', path.join(__dirname, 'views'));
 // Set the folder for css & java scriptss
@@ -42,4 +43,3 @@ app.get('/showalltags', (req, res) => {
 app.listen(3000,function(){
   console.log('Server has started!');
 });
-
