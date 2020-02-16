@@ -10,6 +10,7 @@ router.get("/",function(req,res){
   } );
 });
 
+// IIFE (Immediately Invoked Function Expression) ---runs as soon as it is defined. (function () {statements })();
 // router.get('/', (req, res) => {
 //   console.log('Request for home recieved');
 //   res.render('welcome');
